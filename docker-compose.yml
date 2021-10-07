@@ -1,0 +1,51 @@
+#docker-compose.yml
+version: '3.8'
+services:
+    postgres:
+        image: postgres:alpine
+        environment:
+            - POSTGRES_USER=airflow
+            - POSTGRES_PASSWORD=FZdStwqMgN27augcJN8pWJX7
+            - POSTGRES_DB=airflow
+        ports:
+            - "5432:5432"
+
+    webserver:
+        image: apache/airflow:master-python3.8
+        entrypoint: ./scripts/entrypoint.sh
+        depends_on:
+            - postgres
+        env_file:
+            - .env
+        volumes:
+            - ./dags:/opt/airflow/dags
+            - ./logs:/opt/airflow/logs
+            - ./scripts:/opt/airflow/scripts
+        ports:
+            - "8080:8080"
+        deploy:
+            restart_policy:
+                condition: on-failure
+                
+    scheduler:
+        image: apache/airflow:master-python3.8
+        command: scheduler
+        depends_on:
+            - postgres
+            - webserver
+        env_file:
+            - .env
+        volumes:
+            - ./dags:/opt/airflow/dags
+            - ./logs:/opt/airflow/logs
+        deploy:
+            restart_policy: 
+                condition: on-failure
+
+    couchdb:
+        image: couchdb:latest
+        environment:
+            - COUCHDB_USER=admin
+            - COUCHDB_PASSWORD=Password12345
+        ports:
+            - "5984:5984"
