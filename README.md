@@ -34,9 +34,16 @@ Make sure you are in the REST API folder of Philip-Branch-2 using cd:
 - > Then run >> python3 jobs_api.py 
 - Clicking on the url: http://127.0.0.1:5000/ brings us to our endpoints:
 - Please see README.pdf (attached for more details)
+- Run these endpoints in url :
+- > Clicking on the url: http://127.0.0.1:5000/ brings us to our endpoints:
+- > http://127.0.0.1:5000/connections/ID
+- > http://127.0.0.1:5000/status/ID
+- > http://127.0.0.1:5000/status
+- > http://127.0.0.1:5000/dags/ID
+- > http://127.0.0.1:5000/api/v1/dags/ID/dagRuns
 #### Connecting Endpoint to Airflow 
 - This endpoint allows us to connect to Airflow. Due to Airflow being complicated, it shows as ‘unauthorized’, but we are connected to it.
-- http://127.0.0.1:5000/api/v1/dags/ID/dagRuns
+- > tp://127.0.0.1:5000/api/v1/dags/ID/dagRuns
 #### Problem:
 - This is not unauthorized due to Airflow being difficult
 - it works but is not connected
