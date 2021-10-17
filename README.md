@@ -1,7 +1,7 @@
 # REST_API
 REST API using Flask, triggering workflow DAGs in Apache Airflow upon request; while CouchDB allows end user application to query the state of request via API and the scripts in Airflow update their status triggered by REST calls in the workflow with Dockers 
 
-- Please see README.pdf for more details & images to better explain process
+- Please see README.pdf for more details & images to better explain process (attached)
 
 #### 1. jobs_airflow.py
 - Lines 3-12 demonstrate a stubbed class to be able run static method used in PushJob & JobStatus. This will populate in the terminal as we run them, shown below in this documentation.
