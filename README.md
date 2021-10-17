@@ -37,10 +37,10 @@ Make sure you are in the REST API folder of Philip-Branch-2 using cd:
 #### Connecting Endpoint to Airflow 
 - This endpoint allows us to connect to Airflow. Due to Airflow being complicated, it shows as ‘unauthorized’, but we are connected to it.
 - http://127.0.0.1:5000/api/v1/dags/ID/dagRuns
-Problem:
+#### Problem:
 • This is not unauthorized due to Airflow being difficult
 • it works but is not connected
-Solution:
+#### Solution:
 • Airflow can be tricky and challenging here
 • Download updated deployment folder over current one if not updated
 • Create new entrypoint.sh file with the line >> cp scripts/airflow.cfg airflow.cfg and the
