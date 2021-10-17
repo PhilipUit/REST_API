@@ -50,4 +50,7 @@ Make sure you are in the REST API folder of Philip-Branch-2 using cd:
 #### Solution:
 - Airflow can be tricky and challenging here
 - Download updated deployment folder over current one if not updated
-- > Create new entrypoint.sh file with the line >> cp scripts/airflow.cfg airflow.cfg and the new airflow.cfg file in the scripts folder
+- Create new entrypoint.sh file with the line 
+- > cp scripts/airflow.cfg airflow.cfg 
+ and the new file in the scripts folder:
+ - > airflow.cfg file in the scripts folder
